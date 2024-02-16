@@ -1,0 +1,330 @@
+//You may append your own styles to the following CSSbut not modify it, but modify only if you need to or should
+
+@import 'constants';
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  font-size: 1rem;
+  // background-color: $theme-primary-v1;
+  color: #111;
+  font-family: 'Quicksand', 'Trebuchet MS', sans-serif;
+  line-height: 1.8rem;
+}
+
+* {
+  box-sizing: border-box;
+  outline: none !important;
+}
+
+body {
+  padding: 0 !important;
+  position: relative;
+  background-color: $theme-primary-v1;
+
+  &.desktop.is-pc {
+    [class*='PrivateSwipeArea'] {
+      display: none;
+    }
+
+    &.custom-scroll-bar,
+    .custom-scroll-bar,
+    .MuiDrawer-paper {
+      &::-webkit-scrollbar {
+        width: 0.5em;
+        height: 0.5em;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.15);
+        border-radius: 0.5em;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: rgba($prim-r, $prim-g, $prim-b, 0.75) !important;
+        border-radius: 0.5em;
+      }
+    }
+  }
+
+  &:before {
+    @include before-or-after($bg: url('/IMG3.jpeg'), $o: 0.5);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
+#root {
+  display: flex;
+
+  > div {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+img {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+input {
+  margin: 1em 0;
+
+  font: {
+    family: inherit;
+    size: inherit;
+  }
+}
+
+a {
+  color: $theme-primary-v5;
+
+  &:hover,
+  &:focus {
+    color: $theme-primary-v2;
+    text-decoration: underline;
+  }
+}
+
+button,
+a {
+  text-transform: unset !important;
+  font-size: 1rem;
+  transition: 0.3s !important;
+}
+
+hr {
+  margin: 1.25rem 0;
+  height: 0.2rem;
+  border-radius: 0.1rem;
+  border: none;
+  background: $theme-primary;
+}
+
+ol,
+ul {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: 'Google Sans', 'Trebuchet MS', sans-serif !important;
+  line-height: 150%;
+
+  * {
+    font-size: inherit;
+    font-family: 'Google Sans', 'Trebuchet MS', sans-serif !important;
+  }
+}
+
+h1 {
+  font-size: 3.1rem;
+}
+
+h2 {
+  font-size: 2.4rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.6rem;
+}
+
+h5 {
+  font-size: 1.3rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+.MuiSnackbar-root {
+  max-width: 75rem / 2;
+  display: block;
+  width: auto !important;
+  z-index: 1550;
+  background: transparent !important;
+}
+
+.MuiAlert-root {
+  font-family: inherit;
+}
+
+.MuiAlert-filledSuccess {
+  background: $success;
+}
+
+.MuiAlert-filledError {
+  background: $error;
+}
+
+.MuiAlert-filledInfo {
+  background: $info;
+
+  // [class*='Icon'] {
+  //   // color: orange;
+  // }
+
+  button {
+    [class*='Icon'] {
+      color: white;
+    }
+  }
+}
+
+.container,
+.row,
+.col {
+  margin: unset;
+  padding: 0;
+  padding-right: 0;
+  padding-left: 0;
+  max-width: unset;
+}
+
+.w-100 {
+  width: 100% !important;
+}
+
+.w-auto {
+  width: auto !important;
+}
+
+.text-ellipsis {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.theme-primary {
+  color: $theme-primary !important;
+}
+.theme-primary-lighter {
+  color: $theme-primary-v7 !important;
+}
+.theme-primary-lightest {
+  color: $theme-primary-v9 !important;
+}
+.theme-primary-darker {
+  color: $theme-primary-v3 !important;
+}
+.theme-primary-darkest {
+  color: $theme-primary-v1 !important;
+}
+
+.theme-secondary {
+  color: $theme-secondary !important;
+}
+.theme-secondary-lighter {
+  color: $theme-secondary-v7 !important;
+}
+.theme-secondary-lightest {
+  color: $theme-secondary-v9 !important;
+}
+.theme-secondary-darker {
+  color: $theme-secondary-v3 !important;
+}
+.theme-secondary-darkest {
+  color: $theme-secondary-v1 !important;
+}
+
+.theme-tertiary {
+  color: $theme-tertiary !important;
+}
+.theme-tertiary-darker {
+  color: $theme-tertiary-v3 !important;
+}
+.theme-tertiary-darkest {
+  color: $theme-tertiary-v1 !important;
+}
+.theme-tertiary-lighter {
+  color: $theme-tertiary-v7 !important;
+}
+.theme-tertiary-lightest {
+  color: $theme-tertiary-v9 !important;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.text-shadow {
+  text-shadow: 0.0625rem 0.0625rem 0.1rem rgba(0, 0, 0, 0.5);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+[class^='MuiFormControl'],
+div {
+  fieldset {
+    transition: 0.35s, border-width 0s;
+  }
+}
+
+.MuiTooltip-popper * {
+  font-family: inherit;
+  font-size: 0.7em;
+}
+
+.MuiOutlinedInput-root {
+  border-radius: 0.35rem;
+  background: #f8f8f8;
+}
+
+[class^='MuiFormControl'],
+div {
+  .MuiInputBase-root {
+    &::before,
+    &::after {
+      transition: 0.3s;
+    }
+
+    &::after {
+      border-color: $theme-primary;
+    }
+
+    &:hover {
+      &::before {
+        border-color: grey;
+      }
+    }
+  }
+
+  .Mui-focused {
+    color: $theme-primary !important;
+  }
+
+  .Mui-disabled {
+    opacity: 0.3;
+
+    fieldset {
+      background: #ddd;
+      border: none !important;
+    }
+  }
+}
